@@ -1,6 +1,9 @@
 #include <iostream>
+#include "phonebook.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    cout << "Starting..." << endl;
+    phonebook _phonebook;
+    _phonebook.start();
     return 0;
 }

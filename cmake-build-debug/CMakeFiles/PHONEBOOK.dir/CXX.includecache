@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/contact.h
+bits/stdc++.h
+-
+iostream
+-
+
+E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/main.cpp
+iostream
+-
+phonebook.h
+E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.h
+
+E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.cpp
+phonebook.h
+E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.h
+
+E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.h
+contact.h
+E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/contact.h
+

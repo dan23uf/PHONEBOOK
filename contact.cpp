@@ -1,35 +1,34 @@
-//
-// Created by danie on 4/11/2021.
-//
+
 
 #include "contact.h"
 
-contact::contact() {
-    phone_num = -1;
+Contact::Contact() {
+    phone_num = "-1";
+
 }
 
-contact::contact(string str, int x) {
+Contact::Contact(string str, string x) {
     this->name = str;
     this->phone_num = x;
 }
 
-void contact::show_contact() {
+void Contact::show_contact() {
     cout << "Name: " << this->get_name() << endl;
     cout << "Phone #: " << this->get_phone() << endl;
 }
 
-string contact::get_name() const {
+string Contact::get_name() const {
     return this->name;
 }
 
-int contact::get_phone() const {
+string Contact::get_phone() const {
     return this->phone_num;
 }
 
-void contact::change_name(string& s) {
+void Contact::change_name(string& s) {
     this->name = s;
 }
 
-void contact::change_phone(int& x) {
+void Contact::change_phone(string& x) {
     this->phone_num = x;
 }
