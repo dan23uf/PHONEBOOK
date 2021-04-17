@@ -1,5 +1,19 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/vivi/CLionProjects/PHONEBOOK
--- Found SFML 2.5.1 in /Library/Frameworks/SFML.framework/Resources/CMake
+"C:\Users\claud\AppData\Local\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\claud\PHONEBOOK
+-- The C compiler identification is GNU 7.3.0
+-- The CXX compiler identification is GNU 7.3.0
+-- Check for working C compiler: C:/mingw64/bin/gcc.exe
+-- Check for working C compiler: C:/mingw64/bin/gcc.exe - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: C:/mingw64/bin/g++.exe
+-- Check for working CXX compiler: C:/mingw64/bin/g++.exe - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found SFML .. in C:/SFML/include
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug
+-- Build files have been written to: C:/Users/claud/PHONEBOOK/cmake-build-debug
