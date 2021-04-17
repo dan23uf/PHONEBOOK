@@ -5,98 +5,115 @@
 		<Option title="PHONEBOOK"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\Library\;CMake Files\..\..\..\..\Library\Frameworks\;CMake Files\..\..\..\..\Library\Frameworks\SFML.framework\;CMake Files\..\..\..\..\Library\Frameworks\SFML.framework\Resources\;CMake Files\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug"/>
+				<Option working_dir="/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="PHONEBOOK">
-				<Option output="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/PHONEBOOK.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 PHONEBOOK"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="PHONEBOOK/fast">
-				<Option output="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/PHONEBOOK.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 PHONEBOOK/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug"/>
+				<Option working_dir="/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PHONEBOOK">
+				<Option output="/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/PHONEBOOK" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Frameworks/SFML.framework"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 PHONEBOOK"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PHONEBOOK/fast">
+				<Option output="/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/PHONEBOOK" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Frameworks/SFML.framework"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 PHONEBOOK/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/contact.cpp">
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/contact.cpp">
 			<Option target="PHONEBOOK"/>
 		</Unit>
-		<Unit filename="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/contact.h">
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/contact.h">
 			<Option target="PHONEBOOK"/>
 		</Unit>
-		<Unit filename="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/main.cpp">
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/main.cpp">
 			<Option target="PHONEBOOK"/>
 		</Unit>
-		<Unit filename="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.cpp">
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/phonebook.cpp">
 			<Option target="PHONEBOOK"/>
 		</Unit>
-		<Unit filename="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.h">
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/phonebook.h">
 			<Option target="PHONEBOOK"/>
 		</Unit>
-		<Unit filename="E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/CMakeLists.txt">
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
+		</Unit>
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
+		</Unit>
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
+		</Unit>
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLSharedTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
+		</Unit>
+		<Unit filename="/Users/vivi/CLionProjects/PHONEBOOK/../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

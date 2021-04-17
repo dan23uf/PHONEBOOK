@@ -6,23 +6,25 @@
 
 #IncludeRegexTransform: 
 
-E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/contact.h
+/Users/vivi/CLionProjects/PHONEBOOK/contact.h
 bits/stdc++.h
 -
 iostream
 -
 
-E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/main.cpp
+/Users/vivi/CLionProjects/PHONEBOOK/main.cpp
 iostream
 -
 phonebook.h
-E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.h
+/Users/vivi/CLionProjects/PHONEBOOK/phonebook.h
+SFML/Graphics.hpp
+-
 
-E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.cpp
+/Users/vivi/CLionProjects/PHONEBOOK/phonebook.cpp
 phonebook.h
-E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.h
+/Users/vivi/CLionProjects/PHONEBOOK/phonebook.h
 
-E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.h
+/Users/vivi/CLionProjects/PHONEBOOK/phonebook.h
 contact.h
-E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/contact.h
+/Users/vivi/CLionProjects/PHONEBOOK/contact.h
 

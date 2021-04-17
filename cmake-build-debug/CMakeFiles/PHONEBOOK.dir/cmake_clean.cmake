@@ -1,11 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/PHONEBOOK.dir/contact.cpp.obj"
-  "CMakeFiles/PHONEBOOK.dir/main.cpp.obj"
-  "CMakeFiles/PHONEBOOK.dir/phonebook.cpp.obj"
-  "PHONEBOOK.exe"
-  "PHONEBOOK.exe.manifest"
+  "CMakeFiles/PHONEBOOK.dir/contact.cpp.o"
+  "CMakeFiles/PHONEBOOK.dir/main.cpp.o"
+  "CMakeFiles/PHONEBOOK.dir/phonebook.cpp.o"
+  "PHONEBOOK"
   "PHONEBOOK.pdb"
-  "libPHONEBOOK.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
