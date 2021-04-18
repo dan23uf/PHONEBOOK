@@ -3,7 +3,7 @@ project(PHONEBOOK)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(PHONEBOOK main.cpp contact.cpp contact.h phonebook.cpp phonebook.h "ImplementationMenu.cpp" ImplemenationMenu.h)
+add_executable(PHONEBOOK main.cpp contact.cpp contact.h phonebook.cpp phonebook.h) #"ImplementationMenu.cpp" ImplemenationMenu.h
 
 include_directories(c:/SFML/include)
 
