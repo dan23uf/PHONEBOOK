@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/ab0d34b0c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <title>PHONEBOOK</title>
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="display-4"><i class="fas fa-address-book"></i>My<span class="Text-primary">PHONE</span>BOOK</h1>
+    <form id="phonebook-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control">
+            <label for="phone">Phone #</label>
+            <input type="text" id="phone" class="form-control">
+        </div>
+        <input type="submit" value="Add Contact" class="btn btn-primary btn-block">
+    </form>
+    <table class="table table-striped mt-5">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>phone #</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="contact-list"></tbody>
+    </table>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

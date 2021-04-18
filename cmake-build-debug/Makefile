@@ -142,6 +142,33 @@ PHONEBOOK/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PHONEBOOK.dir\build.make CMakeFiles/PHONEBOOK.dir/build
 .PHONY : PHONEBOOK/fast
 
+ImplementationMenu.obj: ImplementationMenu.cpp.obj
+
+.PHONY : ImplementationMenu.obj
+
+# target to build an object file
+ImplementationMenu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PHONEBOOK.dir\build.make CMakeFiles/PHONEBOOK.dir/ImplementationMenu.cpp.obj
+.PHONY : ImplementationMenu.cpp.obj
+
+ImplementationMenu.i: ImplementationMenu.cpp.i
+
+.PHONY : ImplementationMenu.i
+
+# target to preprocess a source file
+ImplementationMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PHONEBOOK.dir\build.make CMakeFiles/PHONEBOOK.dir/ImplementationMenu.cpp.i
+.PHONY : ImplementationMenu.cpp.i
+
+ImplementationMenu.s: ImplementationMenu.cpp.s
+
+.PHONY : ImplementationMenu.s
+
+# target to generate assembly for a file
+ImplementationMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PHONEBOOK.dir\build.make CMakeFiles/PHONEBOOK.dir/ImplementationMenu.cpp.s
+.PHONY : ImplementationMenu.cpp.s
+
 contact.obj: contact.cpp.obj
 
 .PHONY : contact.obj
@@ -232,6 +259,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... PHONEBOOK
+	@echo ... ImplementationMenu.obj
+	@echo ... ImplementationMenu.i
+	@echo ... ImplementationMenu.s
 	@echo ... contact.obj
 	@echo ... contact.i
 	@echo ... contact.s
