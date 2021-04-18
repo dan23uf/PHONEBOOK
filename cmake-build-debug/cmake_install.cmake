@@ -1,4 +1,4 @@
-# Install script for directory: E:/School/UF/COP3530_PROJECT_3/PHONEBOOK
+# Install script for directory: C:/Users/claud/PHONEBOOK
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/claud/PHONEBOOK/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

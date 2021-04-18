@@ -15,8 +15,30 @@ struct PB_VECTOR{
     //TODO SAVE CONTACTS TO FILE
     //SEARCH CONTACT BY NAME
 
+
 private:
     vector<Contact*> ph_contacts;
+
+#include "contact.h"
+using namespace std;
+
+struct PB_VECTOR{
+
+
+    //Show Contact INFO
+    //ADD CONTACT MANUALLY
+    //EDIT EXISTING CONTACT NAME
+    //EDIT EXISTING CONTACT PHONE
+    //DELETE INDIVIDUAL CONTACT
+    //DELETE ALL CONTACT
+    //TODO LOAD CONTACTS FROM FILE or API
+    //TODO SAVE CONTACTS TO FILE
+    //SEARCH CONTACT BY NAME
+
+private:
+
+    vector<Contact*> ph_contacts;
+
 
 public:
 
@@ -103,7 +125,6 @@ public:
     }
 
 };
-
 
 
 struct PB_TRIE { // TRIE
@@ -285,6 +306,26 @@ public:
 };
 
 
+struct PB_BST{
+
+
+    //TODO Show Contact INFO
+    //TODO ADD CONTACT MANUALLY
+    //TODO EDIT EXISTING CONTACT
+    //TODO DELETE INDIVIDUAL CONTACT
+    //TODO DELETE ALL CONTACT
+
+    //TODO LOAD CONTACTS FROM FILE or API
+    //TODO SAVE CONTACT TO FILE
+    //TODO SEARCH CONTACT
+
+private:
+    vector<Contact*> ph_contacts;
+
+public:
+
+
+};
 
 struct PB_HEAP{
 
@@ -294,6 +335,7 @@ struct PB_HEAP{
     //TODO EDIT EXISTING CONTACT
     //TODO DELETE INDIVIDUAL CONTACT
     //TODO DELETE ALL CONTACT
+
     //TODO LOAD CONTACTS FROM FILE or API
     //TODO SAVE CONTACT TO FILE
     //TODO SEARCH CONTACT
@@ -312,6 +354,7 @@ class phonebook {
     //TODO VECTOR WITH BINARY SEARCH IMPLEMENTATION
     PB_VECTOR ph_vector;
     bool using_vector = false;
+
     
     //TODO TRIE IMPLEMENTATION
     PB_TRIE ph_trie;
@@ -321,11 +364,18 @@ class phonebook {
     bool using_heap = false;
 
     
+    //TODO HEAP IMPLEMENTATION
+
+    bool using_heap = false;
+    //TODO BST IMPLEMENTATION
+
+    bool using_bst = false;
 
     //TODO VALIDATIONS
 
     //TODO CHANGE BETWEEN IMPLEMENTATIONS
 public:
+
 
     void start(){
 
@@ -370,6 +420,49 @@ public:
 
             if(using_vector){
 
+     void start(){
+
+         int input;
+
+         cout << "Which implementation to use: \n"
+            << "1. Vector\n"
+            << "2. BST\n"
+            << "3. Heap\n"
+            << "0. EXIT\n" << endl;
+
+         cin >> input;
+
+
+         switch (input) {
+             case 1:
+                 using_vector = true;
+                 break;
+             case 2:
+                 using_bst = true;
+                 break;
+             case 3:
+                 using_heap = true;
+                 break;
+             default:
+                 cout << "Invalid option" << endl;
+         }
+
+         while (input) {
+             cout << "What do you want to do: \n"
+                  << "1. Search Contact\n"
+                  << "2. Add Contact\n"
+                  << "3. Delete Contact\n"
+                  << "4. Edit Contact\n"
+                  << "5. Show All Contact\n"
+                  << endl;
+
+             cin >> input;
+
+             string input_string;
+             string input_number;
+
+             if(using_vector){
+
                  if(input == 1) {
                      cout << "Enter name to search: ";
                      cin >> input_string;
@@ -405,7 +498,7 @@ public:
                  }
 
              }
-             
+    
             else if(using_trie){
                 //TODO add insert multiple and delete all?
                 if(input == 1) { // search
@@ -458,7 +551,11 @@ public:
                 }
 
              }
-             
+
+             else if(using_bst){
+
+             }
+
              else if(using_heap){
 
 
