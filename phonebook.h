@@ -4,7 +4,7 @@
 #include "contact.h"
 using namespace std;
 
-struct PB_VECTOR{
+struct PB_VECTOR {
 
 
     //Show Contact INFO
@@ -13,7 +13,7 @@ struct PB_VECTOR{
     //EDIT EXISTING CONTACT PHONE
     //DELETE INDIVIDUAL CONTACT
     //DELETE ALL CONTACT
-    //TODO LOAD CONTACTS FROM FILE or API
+    //LOAD CONTACTS FROM FILE or API
     //TODO SAVE CONTACTS TO FILE
     //SEARCH CONTACT BY NAME
 
@@ -104,6 +104,32 @@ public:
         for(auto pointer: ph_contacts){
             pointer->show_contact();
         }
+    }
+
+    void load_contacts(string& file_name){
+        ifstream in_file(file_name);
+
+        string line;
+        string headers;
+
+        getline(in_file, headers);
+
+        string name;
+        string phone_number;
+
+        if(in_file.is_open()){
+            while (getline(in_file, line)){
+                istringstream stream(line);
+
+                getline(stream,name,',');
+                getline(stream,phone_number);
+
+                auto temp = new Contact(name, phone_number);
+                this->add_manual(temp);
+            }
+        }
+        else
+            cout<< "File at: " << file_name << " could not be opened" << endl;
     }
 
 };
@@ -344,7 +370,32 @@ public:
         return true;
     }
 
-    //TODO LOAD CONTACTS FROM FILE or API
+    //LOAD CONTACTS FROM FILE or API
+    void load_contacts(string& file_name){
+        ifstream in_file(file_name);
+
+        string line;
+        string headers;
+
+        getline(in_file, headers);
+
+        string name;
+        string phone_number;
+
+        if(in_file.is_open()){
+            while (getline(in_file, line)){
+                istringstream stream(line);
+
+                getline(stream,name,',');
+                getline(stream,phone_number);
+
+                auto temp = new Contact(name, phone_number);
+                this->add_contact_manual(temp);
+            }
+        }
+        else
+            cout<< "File at: " << file_name << " could not be opened" << endl;
+    }
     //TODO SAVE CONTACT TO FILE
 
     //SEARCH CONTACT
@@ -422,8 +473,10 @@ public:
 
              string input_string;
              string input_number;
-
+             string data_file = "data.csv";
              if(using_vector){
+
+                 ph_vector.load_contacts(data_file);
 
                  if(input == 1) {
                      cout << "Enter name to search: ";
@@ -515,6 +568,9 @@ public:
              }
 
              else if(using_map){
+
+                 ph_map.load_contacts(data_file);
+
                  if(input == 1) {
                      cout << "Enter name to search: ";
                      cin >> input_string;
