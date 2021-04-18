@@ -1,3 +1,3 @@
-/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir
+C:/Users/claud/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir
+C:/Users/claud/PHONEBOOK/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/claud/PHONEBOOK/cmake-build-debug/CMakeFiles/rebuild_cache.dir

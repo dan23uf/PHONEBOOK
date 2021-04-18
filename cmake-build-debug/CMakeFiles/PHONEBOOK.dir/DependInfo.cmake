@@ -4,15 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/vivi/CLionProjects/PHONEBOOK/contact.cpp" "/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/contact.cpp.o"
-  "/Users/vivi/CLionProjects/PHONEBOOK/main.cpp" "/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/main.cpp.o"
-  "/Users/vivi/CLionProjects/PHONEBOOK/phonebook.cpp" "/Users/vivi/CLionProjects/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/phonebook.cpp.o"
+  "C:/Users/claud/PHONEBOOK/ImplementationMenu.cpp" "C:/Users/claud/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/ImplementationMenu.cpp.obj"
+  "C:/Users/claud/PHONEBOOK/contact.cpp" "C:/Users/claud/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/contact.cpp.obj"
+  "C:/Users/claud/PHONEBOOK/main.cpp" "C:/Users/claud/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/main.cpp.obj"
+  "C:/Users/claud/PHONEBOOK/phonebook.cpp" "C:/Users/claud/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/phonebook.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/Library/Frameworks/SFML.framework"
+  "c:/SFML/include"
+  "C:/SFML/include"
   )
 
 # Targets to which this target links.
