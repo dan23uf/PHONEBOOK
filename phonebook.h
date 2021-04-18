@@ -5,24 +5,6 @@
 using namespace std;
 
 struct PB_VECTOR{
-    //Show Contact INFO
-    //ADD CONTACT MANUALLY
-    //EDIT EXISTING CONTACT NAME
-    //EDIT EXISTING CONTACT PHONE
-    //DELETE INDIVIDUAL CONTACT
-    //DELETE ALL CONTACT
-    //TODO LOAD CONTACTS FROM FILE or API
-    //TODO SAVE CONTACTS TO FILE
-    //SEARCH CONTACT BY NAME
-
-
-private:
-    vector<Contact*> ph_contacts;
-
-#include "contact.h"
-using namespace std;
-
-struct PB_VECTOR{
 
 
     //Show Contact INFO
@@ -306,47 +288,76 @@ public:
 };
 
 
-struct PB_BST{
-
-
-    //TODO Show Contact INFO
-    //TODO ADD CONTACT MANUALLY
-    //TODO EDIT EXISTING CONTACT
-    //TODO DELETE INDIVIDUAL CONTACT
-    //TODO DELETE ALL CONTACT
-
-    //TODO LOAD CONTACTS FROM FILE or API
-    //TODO SAVE CONTACT TO FILE
-    //TODO SEARCH CONTACT
+struct PB_MAP{
 
 private:
-    vector<Contact*> ph_contacts;
+    unordered_map<string, Contact*> ph_contacts;
+
 
 public:
 
+    //Show Contact INFO
+    void show_all_contacts(){
+        for(auto elem: ph_contacts){
+            elem.second->show_contact();
+        }
+    }
+    //ADD CONTACT MANUALLY
+    bool add_contact_manual(Contact* cnt){
+        ph_contacts[cnt->get_name()] = cnt;
+    }
+    //EDIT EXISTING CONTACT
+    bool edit_contact_name(string old_name, string new_name){
+        if(this->search_contact(old_name)){
+            ph_contacts[old_name]->change_name(new_name);
+            ph_contacts[new_name] = ph_contacts[old_name];
+            ph_contacts.erase(old_name);
+            return true;
+        }
+        else
+            return false;
+    }
+    bool edit_contact_number(string name, string new_phone){
+        if(this->search_contact(name)){
+            ph_contacts[name]->change_phone(new_phone);
+            return true;
+        }
+        else
+            return false;
+    }
+    // DELETE INDIVIDUAL CONTACT
+    bool delete_contact(string name){
+        if(this->search_contact(name)){
+            delete ph_contacts[name];
+            ph_contacts.erase(name);
+            return true;
+        }
+        else
+            return false;
+    }
+    // DELETE ALL CONTACT
+    bool delete_all_contact(){
+        for(auto elem: ph_contacts){
+            this->delete_contact(elem.second->get_name());
 
-};
-
-struct PB_HEAP{
-
-
-    //TODO Show Contact INFO
-    //TODO ADD CONTACT MANUALLY
-    //TODO EDIT EXISTING CONTACT
-    //TODO DELETE INDIVIDUAL CONTACT
-    //TODO DELETE ALL CONTACT
+        }
+        return true;
+    }
 
     //TODO LOAD CONTACTS FROM FILE or API
     //TODO SAVE CONTACT TO FILE
-    //TODO SEARCH CONTACT
 
-private:
-    vector<Contact*> ph_contacts;
-
-public:
-
+    //SEARCH CONTACT
+    Contact* search_contact(string name){
+        auto found = ph_contacts.find(name);
+        if(found != ph_contacts.end())
+            return found->second;
+        else
+            return nullptr;
+    }
 
 };
+
 
 class phonebook {
 
@@ -360,65 +371,16 @@ class phonebook {
     PB_TRIE ph_trie;
     bool using_trie = false;
 
-    //TODO HEAP IMPLEMENTATION
-    bool using_heap = false;
-
-    
-    //TODO HEAP IMPLEMENTATION
-
-    bool using_heap = false;
-    //TODO BST IMPLEMENTATION
-
-    bool using_bst = false;
+    //TODO MAP IMPLEMENTATION
+    PB_MAP ph_map;
+    bool using_map = false;
 
     //TODO VALIDATIONS
 
     //TODO CHANGE BETWEEN IMPLEMENTATIONS
+
 public:
 
-
-    void start(){
-
-        int input;
-
-        cout << "Which implementation to use: \n"
-             << "1. Vector\n"
-             << "2. Trie\n"
-             << "3. Heap\n"
-             << "0. EXIT\n" << endl;
-
-        cin >> input;
-
-
-        switch (input) {
-            case 1:
-                using_vector = true;
-                break;
-            case 2:
-                using_trie = true;
-                break;
-            case 3:
-                using_heap = true;
-                break;
-            default:
-                cout << "Invalid option" << endl;
-         }
-
-        while (input) {
-            cout << "What do you want to do: \n"
-                 << "1. Search Contact\n"
-                 << "2. Add Contact\n"
-                 << "3. Delete Contact\n"
-                 << "4. Edit Contact\n"
-                 << "5. Show All Contact\n"
-                 << endl;
-
-            cin >> input;
-
-            string input_string;
-            string input_number;
-
-            if(using_vector){
 
      void start(){
 
@@ -426,8 +388,8 @@ public:
 
          cout << "Which implementation to use: \n"
             << "1. Vector\n"
-            << "2. BST\n"
-            << "3. Heap\n"
+            << "2. Trie\n"
+            << "3. Map\n"
             << "0. EXIT\n" << endl;
 
          cin >> input;
@@ -438,10 +400,10 @@ public:
                  using_vector = true;
                  break;
              case 2:
-                 using_bst = true;
+                 using_trie = true;
                  break;
              case 3:
-                 using_heap = true;
+                 using_map = true;
                  break;
              default:
                  cout << "Invalid option" << endl;
@@ -499,7 +461,7 @@ public:
 
              }
     
-            else if(using_trie){
+             else if(using_trie){
                 //TODO add insert multiple and delete all?
                 if(input == 1) { // search
                     cout << "Enter name to search: ";
@@ -552,29 +514,44 @@ public:
 
              }
 
-             else if(using_bst){
+             else if(using_map){
+                 if(input == 1) {
+                     cout << "Enter name to search: ";
+                     cin >> input_string;
+                     cout << "Searching..." << endl;
+                     auto temp = ph_map.search_contact(input_string);
+                     if (temp) {
+                         temp->show_contact();
+                     } else
+                         cout << "Contact not Found" << endl;
+                 }
+                 else if(input == 2) {
+                     cout << "Enter name to add: ";
+                     cin >> input_string;
+                     cout << "Enter phone number to add: ";
+                     cin >> input_number;
 
-             }
+                     auto temp = new Contact(input_string, input_number);
+                     bool flag = ph_map.add_contact_manual(temp);
+                     if(flag){
+                         cout << "Contact added." << endl;
+                     }
+                     else
+                         cout << "Error" << endl;
+                 }
+                 else if(input == 3) {
 
-             else if(using_heap){
+                 }
+                 else if(input == 4) {
 
-
+                 }
+                 else if(input == 5) {
+                     ph_map.show_all_contacts();
+                 }
              }
          }
-
      }
-
-
 };
 
 
 #endif //PHONEBOOK_PHONEBOOK_H
-//TODO TRIE IMPLEMENTATION???
-//TODO Show Contact INFO
-//TODO ADD CONTACT MANUALLY
-//TODO EDIT EXISTING CONTACT
-//TODO DELETE INDIVIDUAL CONTACT
-//TODO DELETE ALL CONTACT
-//TODO LOAD CONTACTS FROM FILE or API
-//TODO SAVE CONTACT TO FILE
-//TODO SEARCH CONTACT
