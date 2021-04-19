@@ -32,11 +32,11 @@ public:
 struct ContactComparator
 {
 
-    bool operator ()(const Contact & c1, const Contact & c2)
+    bool operator ()(const Contact* c1, const Contact* c2)
     {
-        if(c1.get_name() == c2.get_name())
-            return c1.get_name() < c2.get_name();
-        return c1.get_name() < c2.get_name();
+        if(c1->get_name() == c2->get_name())
+            return c1->get_name() < c2->get_name();
+        return c1->get_name() < c2->get_name();
     }
 };
 

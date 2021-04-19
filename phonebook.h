@@ -34,7 +34,7 @@ public:
     }
 
     Contact* search_contact_name(string& str){
-
+        sort(ph_contacts.begin(),ph_contacts.end(), ContactComparator());
         int result = helper_search_contact_name(ph_contacts, 0, ph_contacts.size() - 1, str);
         if(result >= 0){
             return ph_contacts[result];
