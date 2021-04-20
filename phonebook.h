@@ -582,7 +582,8 @@ public:
 
                  if(input == 1) {
                      cout << "Enter name to search: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin,input_string);
                      cout << "Searching..." << endl;
                      auto temp = ph_vector.search_contact_name(input_string);
                      if (temp) {
@@ -715,7 +716,8 @@ public:
 
                  if (input == 1) {
                      cout << "Enter name to search: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin,input_string);
                      cout << "Searching..." << endl;
                      auto temp = ph_map.search_contact(input_string);
                      if (temp) {
