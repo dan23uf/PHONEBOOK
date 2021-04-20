@@ -484,16 +484,53 @@ class phonebook {
 public:
 
 
+    void center(string str, int num_cols){
+        int padding_left = (num_cols/2) - (str.size() / 2);
+
+        for(int i = 0; i < padding_left; i++) cout<< ' ';
+
+        cout<<str;
+    }
      void start(){
 
          int input;
+         vector<string> menu1 = {
+                 "----------------------------------------------",
+                 "|          CHOOSE AN IMPLEMENTATION           |",
+                 "|          1 - VECTOR                         |",
+                 "|          2 - MAP                            |",
+                 "|          3 - TRIE                           |",
+                 "|                                             |",
+                 "|                                             |",
+                 "-----------------------------------------------",
+         };
 
-         cout << "Which implementation to use: \n"
-            << "1. Vector\n"
-            << "2. Trie\n"
-            << "3. Map\n"
-            << "0. EXIT\n" << endl;
+         vector<string> menu2 = {
+                 "----------------------------------------------",
+                 "|                  PHONEBOOK                  |",
+                 "|          1 - SEARCH CONTACT                 |",
+                 "|          2 - ADD CONTACT                    |",
+                 "|          3 - DELETE CONTACT                 |",
+                 "|          4 - EDIT CONTACT NAME              |",
+                 "|          5 - EDIT CONTACT PHONE             |",
+                 "|          6 - SHOW ALL                       |",
+                 "|          0 - EXIT                           |",
+                 "-----------------------------------------------",
+         };
+         int num_cols = 100;
 
+         cout<<endl;
+         for(int i = 0; i < num_cols; i++) cout << ' ';
+         cout<< '|'<<endl;
+
+         for(int i = 0; i < menu1.size();i++){
+             center(menu1[i],num_cols);
+             cout<<endl;
+         }
+
+         cout<<endl;
+         for(int i = 0; i < num_cols; i++) cout<<' ';
+         cout<<'|'<<endl;
          cin >> input;
 
 
@@ -517,13 +554,19 @@ public:
          }
 
          while (input) {
-             cout << "What do you want to do: \n"
-                  << "1. Search Contact\n"
-                  << "2. Add Contact\n"
-                  << "3. Delete Contact\n"
-                  << "4. Edit Contact\n"
-                  << "5. Show All Contact\n"
-                  << endl;
+             cout<<endl;
+             for(int i = 0; i < num_cols; i++) cout << ' ';
+             cout<< '|'<<endl;
+
+             for(int i = 0; i < menu2.size();i++){
+                 center(menu2[i],num_cols);
+                 cout<<endl;
+             }
+
+             cout<<endl;
+             for(int i = 0; i < num_cols; i++) cout<<' ';
+             cout<<'|'<<endl;
+             cin >> input;
 
              cin >> input;
 

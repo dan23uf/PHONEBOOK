@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/contact.cpp" "E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/contact.cpp.obj"
-  "E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/main.cpp" "E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/main.cpp.obj"
-  "E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/phonebook.cpp" "E:/School/UF/COP3530_PROJECT_3/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/phonebook.cpp.obj"
+  "C:/Users/claud/CLionProjects/PHONEBOOK/contact.cpp" "C:/Users/claud/CLionProjects/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/contact.cpp.obj"
+  "C:/Users/claud/CLionProjects/PHONEBOOK/main.cpp" "C:/Users/claud/CLionProjects/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/main.cpp.obj"
+  "C:/Users/claud/CLionProjects/PHONEBOOK/phonebook.cpp" "C:/Users/claud/CLionProjects/PHONEBOOK/cmake-build-debug/CMakeFiles/PHONEBOOK.dir/phonebook.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
