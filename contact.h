@@ -22,7 +22,7 @@ public:
 
     string get_name() const;
     string get_phone() const;
-
+    void center(string str, int num_cols);
     void change_name(string& s);
     void change_phone(string& x);
 

@@ -11,9 +11,39 @@ Contact::Contact(string str, string x) {
     this->phone_num = x;
 }
 
+void Contact::center(string str, int num_cols){
+    int padding_left = (num_cols/2) - (str.size() / 2);
+
+    for(int i = 0; i < padding_left; i++) cout<< ' ';
+
+    cout<<str;
+}
+
 void Contact::show_contact() {
-    cout << "Name: " << this->get_name() << endl;
-    cout << "Phone #: " << this->get_phone() << endl;
+    vector<string> contact = {
+            "----------------------------------------------",
+            "|NAME: " + this->get_name() +                "|",
+            "|PHONE: " + this->get_phone()+               "|",
+            "                                               ",
+            "                                               ",
+            "                                               ",
+            "                                               ",
+            "-----------------------------------------------",
+    };
+    int num_cols = 100;
+
+    cout<<endl;
+    for(int i = 0; i < num_cols; i++) cout << ' ';
+    cout <<endl;
+
+    for(int i = 0; i < contact.size();i++){
+        center(contact[i],num_cols);
+        cout<<endl;
+    }
+
+    cout<<endl;
+    for(int i = 0; i < num_cols; i++) cout<<' ';
+    cout <<endl;
 }
 
 string Contact::get_name() const {

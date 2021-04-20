@@ -498,8 +498,8 @@ public:
                  "----------------------------------------------",
                  "|          CHOOSE AN IMPLEMENTATION           |",
                  "|          1 - VECTOR                         |",
-                 "|          2 - MAP                            |",
-                 "|          3 - TRIE                           |",
+                 "|          2 - TRIE                           |",
+                 "|          3 - MAP                            |",
                  "|                                             |",
                  "|                                             |",
                  "-----------------------------------------------",
@@ -514,6 +514,7 @@ public:
                  "|          4 - EDIT CONTACT NAME              |",
                  "|          5 - EDIT CONTACT PHONE             |",
                  "|          6 - SHOW ALL                       |",
+                 "|          7 - CHANGE IMPLEMENTATION          |",
                  "|          0 - EXIT                           |",
                  "-----------------------------------------------",
          };
@@ -521,7 +522,7 @@ public:
 
          cout<<endl;
          for(int i = 0; i < num_cols; i++) cout << ' ';
-         cout<< '|'<<endl;
+         cout <<endl;
 
          for(int i = 0; i < menu1.size();i++){
              center(menu1[i],num_cols);
@@ -530,7 +531,8 @@ public:
 
          cout<<endl;
          for(int i = 0; i < num_cols; i++) cout<<' ';
-         cout<<'|'<<endl;
+         cout <<endl;
+
          cin >> input;
 
 
@@ -556,7 +558,7 @@ public:
          while (input) {
              cout<<endl;
              for(int i = 0; i < num_cols; i++) cout << ' ';
-             cout<< '|'<<endl;
+             cout <<endl;
 
              for(int i = 0; i < menu2.size();i++){
                  center(menu2[i],num_cols);
@@ -565,8 +567,7 @@ public:
 
              cout<<endl;
              for(int i = 0; i < num_cols; i++) cout<<' ';
-             cout<<'|'<<endl;
-             cin >> input;
+             cout <<endl;
 
              cin >> input;
 
@@ -579,7 +580,7 @@ public:
                  ph_vector.load_contacts(data_file);
 
                  if(input == 1) {
-                     cout << "Enter name to search: ";
+                     cout << "ENTER NAME TO SEARCH: ";
                      cin >> input_string;
                      cout << "Searching..." << endl;
                      auto temp = ph_vector.search_contact_name(input_string);
@@ -589,9 +590,9 @@ public:
                          cout << "Contact not Found" << endl;
                  }
                  else if(input == 2) {
-                     cout << "Enter name to add: ";
+                     cout << "ENTER NAME TO ADD: ";
                      cin >> input_string;
-                     cout << "Enter phone number to add: ";
+                     cout << "ENTER PHONE NUMBER TO ADD: ";
                      cin >> input_number;
 
                      auto temp = new Contact(input_string, input_number);
@@ -617,7 +618,7 @@ public:
              else if(using_trie){
 
                 if(input == 1) { // TODO search autocomplete
-                    cout << "Enter name to search: ";
+                    cout << "ENTER NAME TO SEARCH: ";
                     cin.ignore();
                     getline(cin,input_string);
                     cout << "Searching..." << endl;
@@ -635,13 +636,13 @@ public:
                 }
 
                 else if(input == 2) { // insert
-                    cout << "Enter name to add: ";
+                    cout << "ENTER NAME TO ADD: ";
                     cin.ignore();
                     getline(cin, input_string, '\n');
                     if (ph_trie.searchContact(input_string) != nullptr)
                         cout << "Error: contact already exists!" << endl;
                     else {
-                        cout << "Enter phone number to add: ";
+                        cout << "ENTER PHONE TO ADD: ";
                         cin >> input_number;
 
                         ph_trie.insertContact(input_string, input_number);
@@ -649,7 +650,7 @@ public:
                 }
 
                 else if(input == 3) { // delete
-                    cout << "Enter name to delete: ";
+                    cout << "ENTER NAME TO DELETE: ";
                     cin.ignore();
                     getline(cin, input_string);
 
@@ -660,11 +661,11 @@ public:
                 else if(input == 4) { // edit
                     string oldName, newName;
 
-                    cout << "Enter name to edit: ";
+                    cout << "ENTER NAME TO EDIT: ";
                     cin.ignore();
                     getline(cin, oldName);
 
-                    cout << "Enter new name: ";
+                    cout << "ENTER NEW NAME: ";
                     getline(cin, newName);
 
                     cout << "Changing " << oldName << " to " << newName << ": " << endl;
@@ -687,7 +688,7 @@ public:
                  ph_map.load_contacts(data_file);
 
                  if(input == 1) {
-                     cout << "Enter name to search: ";
+                     cout << "ENTER NAME TO SEARCH: ";
                      cin >> input_string;
                      cout << "Searching..." << endl;
                      auto temp = ph_map.search_contact(input_string);
@@ -697,9 +698,9 @@ public:
                          cout << "Contact not Found" << endl;
                  }
                  else if(input == 2) {
-                     cout << "Enter name to add: ";
+                     cout << "ENTER NAME TO ADD: ";
                      cin >> input_string;
-                     cout << "Enter phone number to add: ";
+                     cout << "ENTER PHONE NUMBER TO ADD: ";
                      cin >> input_number;
 
                      auto temp = new Contact(input_string, input_number);
