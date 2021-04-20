@@ -135,8 +135,8 @@ public:
 };
 
 
-struct PB_TRIE { 
-    
+struct PB_TRIE {
+
 private:
     struct TrieNode{
         //This map contains a char (alphabet) points to a TrieNode
@@ -218,7 +218,7 @@ public:
             insertContact(contacts[i]->get_name(), contacts[i]->get_phone());
     }
 
-    // edit contact
+    // edit contact's name
     void editContact(string oldName, string newName) {
         // delete it and create a new one
         if (searchContact(oldName)) { // old name exists
@@ -235,6 +235,16 @@ public:
         }
         else {
             cout << "The old name \"" << oldName << "\" does not exist!" << endl;
+            return;
+        }
+    }
+
+    // edit contact's phone number
+    void editContactNum(string contact, string newNum) {
+        if (searchContact(contact)) // contact exists
+                searchContact(contact)->change_phone(newNum);
+        else {
+            cout << "The old name \"" << contact << "\" does not exist!" << endl;
             return;
         }
     }
@@ -291,9 +301,8 @@ public:
     // searches for a SINGLE contact in trie
     Contact* searchContact(string name) {
         TrieNode* current = root;
-        if (current == nullptr) { // no entries
+        if (current == nullptr)  // no entries
             return nullptr;
-        }
 
         for (int i = 0; i < name.length(); i++) {
             if (current->node[name[i]] == nullptr)
@@ -335,7 +344,7 @@ public:
             return results; // empty
         }
     }
-    
+
     // load contacts from csv file
     void load_contacts(string& file_name){
         ifstream in_file(file_name);
@@ -468,7 +477,7 @@ class phonebook {
     PB_VECTOR ph_vector;
     bool using_vector = false;
 
-    
+
     //TODO TRIE IMPLEMENTATION
     PB_TRIE ph_trie;
     bool using_trie = false;
@@ -483,6 +492,17 @@ class phonebook {
 
 public:
 
+
+
+    void start(){
+
+        int input;
+
+        cout << "Which implementation to use: \n"
+             << "1. Vector\n"
+             << "2. Trie\n"
+             << "3. Map\n"
+             << "0. EXIT\n" << endl;
 
     void center(string str, int num_cols){
         int padding_left = (num_cols/2) - (str.size() / 2);
@@ -532,21 +552,85 @@ public:
          cout<<endl;
          for(int i = 0; i < num_cols; i++) cout<<' ';
          cout<<'|'<<endl;
+       
+        cin >> input;
 
-         cin >> input;
 
-
-         switch (input) {
-             case 1:
-                 using_vector = true;
-                 break;
-             case 2: {
+        switch (input) {
+            case 1:
+                using_vector = true;
+                break;
+            case 2: {
                 using_trie = true;
                 string data_file = "data.csv";
                 cout << "Loading contacts from file..." << endl;
                 ph_trie.load_contacts(data_file);
                 cout << "Successfully loaded.\n" << endl;
                 break;
+
+            }
+            case 3:
+                using_map = true;
+                break;
+            default:
+                cout << "Invalid option" << endl;
+        }
+
+        while (input) {
+            cout << "What do you want to do: \n"
+                 << "1. Search Contact\n"
+                 << "2. Add Contact\n"
+                 << "3. Delete Contact\n"
+                 << "4. Edit Contact Name\n"
+                 << "5. Edit Contact Number\n"
+                 << "6. Show All Contacts\n"
+                 << endl;
+
+            cin >> input;
+
+            string input_string;
+            string input_number;
+            string data_file = "data.csv";
+
+            if(using_vector){
+
+                ph_vector.load_contacts(data_file);
+
+                if(input == 1) {
+                    cout << "Enter name to search: ";
+                    cin >> input_string;
+                    cout << "Searching..." << endl;
+                    auto temp = ph_vector.search_contact_name(input_string);
+                    if (temp) {
+                        temp->show_contact();
+                    } else
+                        cout << "Contact not Found" << endl;
+                }
+                else if(input == 2) {
+                    cout << "Enter name to add: ";
+                    cin >> input_string;
+                    cout << "Enter phone number to add: ";
+                    cin >> input_number;
+
+                    auto temp = new Contact(input_string, input_number);
+                    bool flag = ph_vector.add_manual(temp);
+                    if(flag){
+                        cout << "Contact added." << endl;
+                    }
+                    else
+                        cout << "Error" << endl;
+                }
+                else if(input == 3) {
+
+                }
+                else if(input == 4) {
+
+                }
+                else if(input == 5) {
+                    ph_vector.show_all();
+                }
+
+            }
              }
              case 3:
                  using_map = true;
@@ -636,9 +720,7 @@ public:
                      start();
                  }
 
-             }
-    
-             else if(using_trie){
+            else if(using_trie){
 
                 if(input == 1) { // TODO search autocomplete
                     cout << "Enter name to search: ";
@@ -695,7 +777,21 @@ public:
                     ph_trie.editContact(oldName, newName);
                 }
 
-                else if(input == 5) { // show all
+                else if(input == 5) { // edit
+                    string contact, newNum;
+
+                    cout << "Enter contact to edit: ";
+                    cin.ignore();
+                    getline(cin, contact);
+
+                    cout << "Enter new phone number: ";
+                    getline(cin, newNum);
+
+                    cout << "Changed " << contact << "'s phone number to " << newNum << endl;
+                    ph_trie.editContactNum(contact, newNum);
+                }
+
+                else if(input == 6) { // show all
                     cout << "Displaying all contacts: " << endl;
                     vector<Contact*> results;
                     ph_trie.showAllContacts(ph_trie.getRoot(),results);
@@ -704,6 +800,49 @@ public:
                         i->show_contact();
                     cout << endl;
                 }
+
+            }
+
+            else if(using_map){
+
+                ph_map.load_contacts(data_file);
+
+                if(input == 1) {
+                    cout << "Enter name to search: ";
+                    cin >> input_string;
+                    cout << "Searching..." << endl;
+                    auto temp = ph_map.search_contact(input_string);
+                    if (temp) {
+                        temp->show_contact();
+                    } else
+                        cout << "Contact not Found" << endl;
+                }
+                else if(input == 2) {
+                    cout << "Enter name to add: ";
+                    cin >> input_string;
+                    cout << "Enter phone number to add: ";
+                    cin >> input_number;
+
+                    auto temp = new Contact(input_string, input_number);
+                    bool flag = ph_map.add_contact_manual(temp);
+                    if(flag){
+                        cout << "Contact added." << endl;
+                    }
+                    else
+                        cout << "Error" << endl;
+                }
+                else if(input == 3) {
+
+                }
+                else if(input == 4) {
+
+                }
+                else if(input == 5) {
+                    ph_map.show_all_contacts();
+                }
+            }
+        }
+    }
                 else if(input == 7) {
                     using_trie = false;
                     start();
