@@ -6,17 +6,6 @@ using namespace std;
 
 struct PB_VECTOR {
 
-
-    //Show Contact INFO
-    //ADD CONTACT MANUALLY
-    //EDIT EXISTING CONTACT NAME
-    //EDIT EXISTING CONTACT PHONE
-    //DELETE INDIVIDUAL CONTACT
-    //DELETE ALL CONTACT
-    //LOAD CONTACTS FROM FILE or API
-    //TODO SAVE CONTACTS TO FILE
-    //SEARCH CONTACT BY NAME
-
 private:
 
     vector<Contact*> ph_contacts;
@@ -456,7 +445,6 @@ public:
         else
             cout<< "File at: " << file_name << " could not be opened" << endl;
     }
-    //TODO SAVE CONTACT TO FILE
 
     //SEARCH CONTACT
     Contact* search_contact(string name){
@@ -472,23 +460,15 @@ public:
 
 class phonebook {
 
-
-    //TODO VECTOR WITH BINARY SEARCH IMPLEMENTATION
     PB_VECTOR ph_vector;
     bool using_vector = false;
 
 
-    //TODO TRIE IMPLEMENTATION
     PB_TRIE ph_trie;
     bool using_trie = false;
 
-    //TODO MAP IMPLEMENTATION
     PB_MAP ph_map;
     bool using_map = false;
-
-    //TODO VALIDATIONS
-
-    //TODO CHANGE BETWEEN IMPLEMENTATIONS
 
 public:
 
@@ -531,7 +511,7 @@ public:
 
          cout<<endl;
          for(int i = 0; i < num_cols; i++) cout << ' ';
-         cout<< '|'<<endl;
+         cout<<endl;
 
          for(int i = 0; i < menu1.size();i++){
              center(menu1[i],num_cols);
@@ -540,7 +520,7 @@ public:
 
          cout<<endl;
          for(int i = 0; i < num_cols; i++) cout<<' ';
-         cout<<'|'<<endl;
+         cout<<endl;
        
          cin >> input;
 
@@ -568,7 +548,7 @@ public:
          while (input) {
              cout<<endl;
              for(int i = 0; i < num_cols; i++) cout << ' ';
-             cout<< '|'<<endl;
+             cout<<endl;
 
              for(int i = 0; i < menu2.size();i++){
                  center(menu2[i],num_cols);
@@ -577,7 +557,7 @@ public:
 
              cout<<endl;
              for(int i = 0; i < num_cols; i++) cout<<' ';
-             cout<<'|'<<endl;
+             cout<<endl;
              cin >> input;
 
              string input_string;
@@ -589,7 +569,7 @@ public:
                  ph_vector.load_contacts(data_file);
 
                  if (input == 1) {
-                     cout << "Enter name to search: ";
+                     cout << "ENTER NAME TO SEARCH: ";
                      cin.ignore();
                      getline(cin, input_string);
                      cout << "Searching..." << endl;
@@ -599,9 +579,9 @@ public:
                      } else
                          cout << "Contact not Found" << endl;
                  } else if (input == 2) {
-                     cout << "Enter name to add: ";
+                     cout << "ENTER NAME TO ADD: ";
                      cin >> input_string;
-                     cout << "Enter phone number to add: ";
+                     cout << "ENTER PHONE TO ADD: ";
                      cin >> input_number;
 
                      auto temp = new Contact(input_string, input_number);
@@ -611,22 +591,22 @@ public:
                      } else
                          cout << "Error" << endl;
                  } else if (input == 3) {
-                     cout << "Enter Contact name to be deleted: ";
+                     cout << "ENTER CONTACT NAME TO BE DELETED: ";
                      cin >> input_string;
                      ph_vector.delete_contact(input_string);
                  } else if (input == 4) {
-                     cout << "Enter old Contact name: ";
+                     cout << "ENTER OLD CONTACT NAME: ";
                      cin >> input_string;
                      string old_name = input_string;
-                     cout << "Enter new Contact name: ";
+                     cout << "ENTER NEW CONTACT NAME: ";
                      cin >> input_string;
                      cout << endl;
                      ph_vector.edit_contact_name(old_name, input_string);
                  } else if (input == 5) {
-                     cout << "Enter Contact name: ";
+                     cout << "ENTER CONTACT NAME: ";
                      cin >> input_string;
                      string old_name = input_string;
-                     cout << "Enter new Contact phone: ";
+                     cout << "ENTER NEW PHONE: ";
                      cin >> input_number;
                      cout << endl;
                      ph_vector.edit_contact_phone(old_name, input_number);
@@ -639,8 +619,8 @@ public:
              }
              else if(using_trie){
 
-                if(input == 1) { // TODO search autocomplete
-                    cout << "Enter name to search: ";
+                if(input == 1) {
+                    cout << "ENTER NAME TO SERACH: ";
                     cin.ignore();
                     getline(cin,input_string);
                     cout << "Searching..." << endl;
@@ -658,13 +638,13 @@ public:
                 }
 
                 else if(input == 2) { // insert
-                    cout << "Enter name to add: ";
+                    cout << "ENTER NAME TO ADD: ";
                     cin.ignore();
                     getline(cin, input_string, '\n');
                     if (ph_trie.searchContact(input_string) != nullptr)
                         cout << "Error: contact already exists!" << endl;
                     else {
-                        cout << "Enter phone number to add: ";
+                        cout << "ENTER PHONE NUMBER TO ADD: ";
                         cin >> input_number;
 
                         ph_trie.insertContact(input_string, input_number);
@@ -672,7 +652,7 @@ public:
                 }
 
                 else if(input == 3) { // delete
-                    cout << "Enter name to delete: ";
+                    cout << "ENTER NAME TO DELETE: ";
                     cin.ignore();
                     getline(cin, input_string);
 
@@ -683,11 +663,11 @@ public:
                 else if(input == 4) { // edit
                     string oldName, newName;
 
-                    cout << "Enter name to edit: ";
+                    cout << "ENTER NAME TO EDIT: ";
                     cin.ignore();
                     getline(cin, oldName);
 
-                    cout << "Enter new name: ";
+                    cout << "ENTER NEW NAME: ";
                     getline(cin, newName);
 
                     cout << "Changing " << oldName << " to " << newName << ": " << endl;
@@ -697,11 +677,11 @@ public:
                 else if(input == 5) { // edit
                     string contact, newNum;
 
-                    cout << "Enter contact to edit: ";
+                    cout << "ENTER CONTACT TO EDIT: ";
                     cin.ignore();
                     getline(cin, contact);
 
-                    cout << "Enter new phone number: ";
+                    cout << "ENTER NEW PHONE: ";
                     getline(cin, newNum);
 
                     cout << "Changed " << contact << "'s phone number to " << newNum << endl;
@@ -724,7 +704,7 @@ public:
                  ph_map.load_contacts(data_file);
 
                  if (input == 1) {
-                     cout << "Enter name to search: ";
+                     cout << "ENTER NAME TO SEARCH: ";
                      cin.ignore();
                      getline(cin,input_string);
                      cout << "Searching..." << endl;
@@ -734,9 +714,9 @@ public:
                      } else
                          cout << "Contact not Found" << endl;
                  } else if (input == 2) {
-                     cout << "Enter name to add: ";
+                     cout << "ENTER NAME TO ADD: ";
                      cin >> input_string;
-                     cout << "Enter phone number to add: ";
+                     cout << "ENTER PHONE NUMBER TO ADD: ";
                      cin >> input_number;
 
                      auto temp = new Contact(input_string, input_number);
@@ -746,24 +726,24 @@ public:
                      } else
                          cout << "Error" << endl;
                  } else if(input == 3) {
-                     cout << "Enter Contact name to be deleted: ";
+                     cout << "ENTER CONTACT TO BE DELETED: ";
                      cin >> input_string;
                      ph_map.delete_contact(input_string);
                  }
                  else if(input == 4) {
-                     cout << "Enter old Contact name: ";
+                     cout << "ENTER OLD CONTACT NAME: ";
                      cin >> input_string;
                      string old_name = input_string;
-                     cout << "Enter new Contact name: ";
+                     cout << "ENTER NEW CONTACT NAME: ";
                      cin >> input_string;
                      cout << endl;
                      ph_map.edit_contact_name(old_name, input_string);
                  }
                  else if(input == 5) {
-                     cout << "Enter Contact name: ";
+                     cout << "ENTER CONTACT NAME: ";
                      cin >> input_string;
                      string old_name = input_string;
-                     cout << "Enter new Contact phone: ";
+                     cout << "ENTER NEW CONTACT PHONE: ";
                      cin >> input_number;
                      cout << endl;
                      ph_map.edit_contact_number(old_name, input_number);
