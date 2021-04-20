@@ -492,18 +492,6 @@ class phonebook {
 
 public:
 
-
-
-    void start(){
-
-        int input;
-
-        cout << "Which implementation to use: \n"
-             << "1. Vector\n"
-             << "2. Trie\n"
-             << "3. Map\n"
-             << "0. EXIT\n" << endl;
-
     void center(string str, int num_cols){
         int padding_left = (num_cols/2) - (str.size() / 2);
 
@@ -511,6 +499,7 @@ public:
 
         cout<<str;
     }
+
      void start(){
 
          int input;
@@ -553,7 +542,7 @@ public:
          for(int i = 0; i < num_cols; i++) cout<<' ';
          cout<<'|'<<endl;
        
-        cin >> input;
+         cin >> input;
 
 
         switch (input) {
@@ -567,7 +556,6 @@ public:
                 ph_trie.load_contacts(data_file);
                 cout << "Successfully loaded.\n" << endl;
                 break;
-
             }
             case 3:
                 using_map = true;
@@ -576,70 +564,6 @@ public:
                 cout << "Invalid option" << endl;
         }
 
-        while (input) {
-            cout << "What do you want to do: \n"
-                 << "1. Search Contact\n"
-                 << "2. Add Contact\n"
-                 << "3. Delete Contact\n"
-                 << "4. Edit Contact Name\n"
-                 << "5. Edit Contact Number\n"
-                 << "6. Show All Contacts\n"
-                 << endl;
-
-            cin >> input;
-
-            string input_string;
-            string input_number;
-            string data_file = "data.csv";
-
-            if(using_vector){
-
-                ph_vector.load_contacts(data_file);
-
-                if(input == 1) {
-                    cout << "Enter name to search: ";
-                    cin >> input_string;
-                    cout << "Searching..." << endl;
-                    auto temp = ph_vector.search_contact_name(input_string);
-                    if (temp) {
-                        temp->show_contact();
-                    } else
-                        cout << "Contact not Found" << endl;
-                }
-                else if(input == 2) {
-                    cout << "Enter name to add: ";
-                    cin >> input_string;
-                    cout << "Enter phone number to add: ";
-                    cin >> input_number;
-
-                    auto temp = new Contact(input_string, input_number);
-                    bool flag = ph_vector.add_manual(temp);
-                    if(flag){
-                        cout << "Contact added." << endl;
-                    }
-                    else
-                        cout << "Error" << endl;
-                }
-                else if(input == 3) {
-
-                }
-                else if(input == 4) {
-
-                }
-                else if(input == 5) {
-                    ph_vector.show_all();
-                }
-
-            }
-             }
-             case 3:
-                 using_map = true;
-                 break;
-             default:
-                 cout << "Invalid option" << endl;
-                 start();
-                 break;
-         }
 
          while (input) {
              cout<<endl;
@@ -660,22 +584,21 @@ public:
              string input_number;
              string data_file = "data.csv";
              
-             if(using_vector){
+             if(using_vector) {
 
                  ph_vector.load_contacts(data_file);
 
-                 if(input == 1) {
+                 if (input == 1) {
                      cout << "Enter name to search: ";
                      cin.ignore();
-                     getline(cin,input_string);
+                     getline(cin, input_string);
                      cout << "Searching..." << endl;
                      auto temp = ph_vector.search_contact_name(input_string);
                      if (temp) {
                          temp->show_contact();
                      } else
                          cout << "Contact not Found" << endl;
-                 }
-                 else if(input == 2) {
+                 } else if (input == 2) {
                      cout << "Enter name to add: ";
                      cin >> input_string;
                      cout << "Enter phone number to add: ";
@@ -683,18 +606,15 @@ public:
 
                      auto temp = new Contact(input_string, input_number);
                      bool flag = ph_vector.add_manual(temp);
-                     if(flag){
+                     if (flag) {
                          cout << "Contact added." << endl;
-                     }
-                     else
+                     } else
                          cout << "Error" << endl;
-                 }
-                 else if(input == 3) {
+                 } else if (input == 3) {
                      cout << "Enter Contact name to be deleted: ";
                      cin >> input_string;
                      ph_vector.delete_contact(input_string);
-                 }
-                 else if(input == 4) {
+                 } else if (input == 4) {
                      cout << "Enter old Contact name: ";
                      cin >> input_string;
                      string old_name = input_string;
@@ -702,8 +622,7 @@ public:
                      cin >> input_string;
                      cout << endl;
                      ph_vector.edit_contact_name(old_name, input_string);
-                 }
-                 else if(input == 5) {
+                 } else if (input == 5) {
                      cout << "Enter Contact name: ";
                      cin >> input_string;
                      string old_name = input_string;
@@ -711,16 +630,14 @@ public:
                      cin >> input_number;
                      cout << endl;
                      ph_vector.edit_contact_phone(old_name, input_number);
-                 }
-                 else if(input == 6) {
+                 } else if (input == 6) {
                      ph_vector.show_all();
-                 }
-                 else if(input == 7) {
+                 } else if (input == 7) {
                      using_vector = false;
                      start();
                  }
-
-            else if(using_trie){
+             }
+             else if(using_trie){
 
                 if(input == 1) { // TODO search autocomplete
                     cout << "Enter name to search: ";
@@ -802,53 +719,6 @@ public:
                 }
 
             }
-
-            else if(using_map){
-
-                ph_map.load_contacts(data_file);
-
-                if(input == 1) {
-                    cout << "Enter name to search: ";
-                    cin >> input_string;
-                    cout << "Searching..." << endl;
-                    auto temp = ph_map.search_contact(input_string);
-                    if (temp) {
-                        temp->show_contact();
-                    } else
-                        cout << "Contact not Found" << endl;
-                }
-                else if(input == 2) {
-                    cout << "Enter name to add: ";
-                    cin >> input_string;
-                    cout << "Enter phone number to add: ";
-                    cin >> input_number;
-
-                    auto temp = new Contact(input_string, input_number);
-                    bool flag = ph_map.add_contact_manual(temp);
-                    if(flag){
-                        cout << "Contact added." << endl;
-                    }
-                    else
-                        cout << "Error" << endl;
-                }
-                else if(input == 3) {
-
-                }
-                else if(input == 4) {
-
-                }
-                else if(input == 5) {
-                    ph_map.show_all_contacts();
-                }
-            }
-        }
-    }
-                else if(input == 7) {
-                    using_trie = false;
-                    start();
-                }
-            }
-
              else if(using_map) {
 
                  ph_map.load_contacts(data_file);
