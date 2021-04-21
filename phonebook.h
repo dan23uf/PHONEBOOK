@@ -592,9 +592,11 @@ public:
                          cout << "Contact not Found" << endl;
                  } else if (input == 2) {
                      cout << "ENTER NAME TO ADD: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin, input_string);
                      cout << "ENTER PHONE TO ADD: ";
-                     cin >> input_number;
+                     cin.ignore();
+                     getline(cin, input_number);
 
                      auto temp = new Contact(input_string, input_number);
                      bool flag = ph_vector.add_manual(temp);
@@ -604,22 +606,27 @@ public:
                          cout << "Error" << endl;
                  } else if (input == 3) {
                      cout << "ENTER CONTACT NAME TO BE DELETED: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin, input_string);
                      ph_vector.delete_contact(input_string);
                  } else if (input == 4) {
                      cout << "ENTER OLD CONTACT NAME: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin, input_string);
                      string old_name = input_string;
                      cout << "ENTER NEW CONTACT NAME: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin, input_string);
                      cout << endl;
                      ph_vector.edit_contact_name(old_name, input_string);
                  } else if (input == 5) {
                      cout << "ENTER CONTACT NAME: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin, input_string);
                      string old_name = input_string;
                      cout << "ENTER NEW PHONE: ";
-                     cin >> input_number;
+                     cin.ignore();
+                     getline(cin, input_number);
                      cout << endl;
                      ph_vector.edit_contact_phone(old_name, input_number);
                  } else if (input == 6) {
