@@ -32,6 +32,12 @@ public:
 
     }
 
+    int search_contact_name_int(string& str){
+        sort(ph_contacts.begin(),ph_contacts.end(), ContactComparator());
+        int result = helper_search_contact_name(ph_contacts, 0, ph_contacts.size() - 1, str);
+        return result;
+    }
+
     int helper_search_contact_name(vector<Contact*> contacts, int left, int right, const string& to_find){
         while (left <= right) {
             int m = left + (right - left) / 2;
@@ -68,10 +74,11 @@ public:
     }
 
     bool delete_contact(string str){
-        auto temp = this->search_contact_name(str);
-        if(temp){
-            delete temp;
-            temp = nullptr;
+        string empty = "-1";
+        auto temp = this->search_contact_name_int(str);
+        if(temp >= 0){
+            delete ph_contacts[temp];
+            ph_contacts[temp]->change_name(empty);
             return true;
         }
         return false;
@@ -400,11 +407,13 @@ public:
         else
             return false;
     }
+
     // DELETE INDIVIDUAL CONTACT
     bool delete_contact(string name){
-        if(this->search_contact(name)){
-            delete ph_contacts[name];
-            ph_contacts.erase(name);
+        auto found = this->search_contact(name);
+        if(found){
+            delete found;
+            ph_contacts[name] = nullptr;
             return true;
         }
         else
@@ -524,14 +533,16 @@ public:
        
          cin >> input;
 
+         string data_file = "data.csv";
 
         switch (input) {
             case 1:
                 using_vector = true;
+                ph_vector.load_contacts(data_file);
                 break;
             case 2: {
                 using_trie = true;
-                string data_file = "data.csv";
+                //string data_file = "data.csv";
                 cout << "Loading contacts from file..." << endl;
                 ph_trie.load_contacts(data_file);
                 cout << "Successfully loaded.\n" << endl;
@@ -539,9 +550,11 @@ public:
             }
             case 3:
                 using_map = true;
+                ph_map.load_contacts(data_file);
                 break;
             default:
                 cout << "Invalid option" << endl;
+                start();
         }
 
 
@@ -562,11 +575,10 @@ public:
 
              string input_string;
              string input_number;
-             string data_file = "data.csv";
+
              
              if(using_vector) {
 
-                 ph_vector.load_contacts(data_file);
 
                  if (input == 1) {
                      cout << "ENTER NAME TO SEARCH: ";
@@ -698,10 +710,13 @@ public:
                     cout << endl;
                 }
 
+                else if (input == 7) {
+                    using_trie = false;
+                    start();
+                }
+
             }
              else if(using_map) {
-
-                 ph_map.load_contacts(data_file);
 
                  if (input == 1) {
                      cout << "ENTER NAME TO SEARCH: ";
@@ -715,9 +730,11 @@ public:
                          cout << "Contact not Found" << endl;
                  } else if (input == 2) {
                      cout << "ENTER NAME TO ADD: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin,input_string);
                      cout << "ENTER PHONE NUMBER TO ADD: ";
-                     cin >> input_number;
+                     cin.ignore();
+                     getline(cin,input_number);
 
                      auto temp = new Contact(input_string, input_number);
                      bool flag = ph_map.add_contact_manual(temp);
@@ -727,24 +744,29 @@ public:
                          cout << "Error" << endl;
                  } else if(input == 3) {
                      cout << "ENTER CONTACT TO BE DELETED: ";
-                     cin >> input_string;
-                     ph_map.delete_contact(input_string);
+                     cin.ignore();
+                     getline(cin,input_string);
+                     cout << ph_map.delete_contact(input_string) << endl;
                  }
                  else if(input == 4) {
                      cout << "ENTER OLD CONTACT NAME: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin,input_string);
                      string old_name = input_string;
                      cout << "ENTER NEW CONTACT NAME: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin,input_string);
                      cout << endl;
                      ph_map.edit_contact_name(old_name, input_string);
                  }
                  else if(input == 5) {
                      cout << "ENTER CONTACT NAME: ";
-                     cin >> input_string;
+                     cin.ignore();
+                     getline(cin,input_string);
                      string old_name = input_string;
                      cout << "ENTER NEW CONTACT PHONE: ";
-                     cin >> input_number;
+                     cin.ignore();
+                     getline(cin,input_number);
                      cout << endl;
                      ph_map.edit_contact_number(old_name, input_number);
                  }
@@ -756,7 +778,8 @@ public:
                  }
              }
          }
-     }
+         cout << "GOODBYE!" << endl;
+    }
 };
 
 
